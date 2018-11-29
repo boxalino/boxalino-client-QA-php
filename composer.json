@@ -1,0 +1,34 @@
+{
+  "name": "boxalino/boxalino-client-qa-php",
+  "description": "The Boxalino QA SDK provides a simple and efficient way of testing the  Boxalino Search & Recommendations services.",
+  "type": "library",
+  "keywords": [
+    "boxalino", "qa", "php-unit"
+  ],
+  "homepage": "http://www.boxalino.com",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Sylvain Paillard",
+      "role": "lead"
+    }
+  ],
+  "support": {
+    "email": "support@boxalino.com"
+  },
+  "require": {
+    "php": ">=5.1.2",
+    "apache/thrift": "0.10",
+    "boxalino/boxalino-client-sdk-php": "dev-master"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "com\\boxalino\\bxclient\\v1\\": "lib",
+      "Thrift\\Transport\\": "lib/Thrift/Transport"
+    },
+    "classmap": ["lib/Types.php", "lib/P13nService.php"]
+  }
+}
