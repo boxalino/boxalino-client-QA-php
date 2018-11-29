@@ -19,16 +19,7 @@
   "require": {
     "php": ">=5.1.2",
     "apache/thrift": "0.10",
-    "boxalino/boxalino-client-sdk-php": "dev-master"
-  },
-  "require-dev": {
+    "boxalino/boxalino-client-sdk-php": "dev-lib",
     "phpunit/phpunit": "~4.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "com\\boxalino\\bxclient\\v1\\": "lib",
-      "Thrift\\Transport\\": "lib/Thrift/Transport"
-    },
-    "classmap": ["lib/Types.php", "lib/P13nService.php"]
   }
 }
