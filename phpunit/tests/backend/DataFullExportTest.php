@@ -12,7 +12,7 @@ class DataFullExportTest extends TestCase{
         $print = false;
         $exception = null;
 
-        include("../examples/backend_data_full_export.php");
+        include(__DIR__. "/../../../examples/backend_data_full_export.php");
         $this->assertEquals($exception, null);
     }
 }

@@ -4,16 +4,16 @@
 * In this example, we make a advanced implementation case for a parmaeterized request (all the url parameters are automatically detected and loaded and the current state retrievable)
 */
 
-//include the Boxalino Client SDK php files
-$libPath = '../lib'; //path to the lib folder with the Boxalino Client SDK and PHP Thrift Client files
-require_once(__DIR__ . '/../vendor/autoload.php');
+//require_once(__DIR__ . '/../vendor/autoload.php');
 use com\boxalino\bxclient\v1\BxClient;
 use com\boxalino\bxclient\v1\BxParametrizedRequest;
-BxClient::LOAD_CLASSES($libPath);
+
+//$libPath = __DIR__ . '/../vendor/boxalino/boxalino-client-sdk-php/lib'; //path to the lib folder with the Boxalino Client SDK and PHP Thrift Client files
+//BxClient::LOAD_CLASSES($libPath);
 
 //required parameters you should set for this example to work
-//$account = ""; // your account name
-//$password = ""; // your account password
+//$account = "boxalino_automated_tests2"; // your account name
+//$password = "boxalino_automated_tests2"; // your account password
 $domain = ""; // your web-site domain (e.g.: www.abc.com)
 $logs = array(); //optional, just used here in example to collect logs
 $isDev = false;
@@ -62,6 +62,9 @@ try {
 	
 	//add the request
 	$bxClient->addRequest($bxRequest);
+
+    //setting profile and session for
+    $bxClient->setSessionAndProfile(basename(__FILE__, '.php'), $password);
 	
 	//make the query to Boxalino server and get back the response for all requests
 	$bxResponse = $bxClient->getResponse();

@@ -5,11 +5,12 @@
  */
 
 //include the Boxalino Client SDK php files
-$libPath = '../lib'; //path to the lib folder with the Boxalino Client SDK and PHP Thrift Client files
-require_once(__DIR__ . '/../vendor/autoload.php');
+//require_once(__DIR__ . '/../vendor/autoload.php');
 use com\boxalino\bxclient\v1\BxClient;
 use com\boxalino\bxclient\v1\BxData;
-BxClient::LOAD_CLASSES($libPath);
+
+//$libPath = __DIR__ . '/../vendor/boxalino/boxalino-client-sdk-php/lib'; //path to the lib folder with the Boxalino Client SDK and PHP Thrift Client files
+//BxClient::LOAD_CLASSES($libPath);
 
 //required parameters you should set for this example to work
 //$account = ""; // your account name

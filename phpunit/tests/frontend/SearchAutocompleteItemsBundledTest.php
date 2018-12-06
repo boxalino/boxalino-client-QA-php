@@ -9,8 +9,8 @@ class SearchAutocompleteItemsBundledTest extends TestCase{
     public function test_frontend_search_autocomplete_items_bundled(){
         global $argv;
         $hosts = ['cdn.bx-cloud.com', 'api.bx-cloud.com'];
-        $bxHosts = (isset($argv[2]) ? ($argv[2] == 'all' ? $hosts : array($argv[2])) : $hosts);
-        $timeout = isset($argv[3]) ? $argv[3] : 2000;
+        $bxHosts = (isset($argv[4]) ? ($argv[4] == 'all' ? $hosts : array($argv[4])) : $hosts);
+        $timeout = isset($argv[5]) ? $argv[5] : 2000;
         foreach ($bxHosts as $bxHost) {
             $account = $this->account;
             $password = $this->password;
@@ -21,7 +21,7 @@ class SearchAutocompleteItemsBundledTest extends TestCase{
             $firstTextualSuggestions = array('ida workout parachute pant', 'jade yoga jacket', 'push it messenger bag');
             $secondTextualSuggestions = array('argus all weather tank', 'jupiter all weather trainer', 'livingston all purpose tight');
 
-            include("../examples/frontend_search_autocomplete_items_bundled.php");
+            include(__DIR__. "/../../../examples/frontend_search_autocomplete_items_bundled.php");
             $this->assertEquals($exception, null);
             $this->assertEquals(sizeof($bxAutocompleteResponses), 2);
 

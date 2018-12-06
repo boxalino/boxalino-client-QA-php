@@ -20,6 +20,6 @@
     "php": ">=5.1.2",
     "apache/thrift": "0.10",
     "boxalino/boxalino-client-sdk-php": "2.0.*",
-    "phpunit/phpunit": "~4.0"
+    "phpunit/phpunit": "~7.0"
   }
 }

@@ -6,12 +6,13 @@
 */
 
 //include the Boxalino Client SDK php files
-$libPath = '../lib'; //path to the lib folder with the Boxalino Client SDK and PHP Thrift Client files
-require_once(__DIR__ . '/../vendor/autoload.php');
+//require_once(__DIR__ . '/../vendor/autoload.php');
 use com\boxalino\bxclient\v1\BxClient;
 use com\boxalino\bxclient\v1\BxSearchRequest;
 use com\boxalino\bxclient\v1\BxFacets;
-BxClient::LOAD_CLASSES($libPath);
+
+//$libPath = __DIR__ . '/../vendor/boxalino/boxalino-client-sdk-php/lib'; //path to the lib folder with the Boxalino Client SDK and PHP Thrift Client files
+//BxClient::LOAD_CLASSES($libPath);
 
 //required parameters you should set for this example to work
 //$account = ""; // your account name
@@ -47,6 +48,9 @@ try {
 	
 	//add the request
 	$bxClient->addRequest($bxRequest);
+
+    //setting profile and session for running unit tests
+    $bxClient->setSessionAndProfile(basename(__FILE__, '.php'), $password);
 	
 	//make the query to Boxalino server and get back the response for all requests
 	$bxResponse = $bxClient->getResponse();
