@@ -1,5 +1,5 @@
 {
-  "name": "boxalino/boxalino-client-qa-php",
+  "name": "boxalino/boxalino-client-QA-php",
   "description": "The Boxalino QA SDK provides a simple and efficient way of testing the  Boxalino Search & Recommendations services.",
   "type": "library",
   "keywords": [
