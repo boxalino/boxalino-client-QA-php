@@ -3,17 +3,21 @@ use PHPUnit\Framework\TestCase;
 
 class SearchAutocompleteItemsTest extends TestCase{
 
-    private $account = "boxalino_automated_tests2";
-    private $password = "boxalino_automated_tests2";
+    private $account = "";
+    private $password = "";
+    private $apiKey = "";
+    private $apiSecret = "";
 
     public function test_frontend_search_autocomplete_items(){
         global $argv;
-        $hosts = ['cdn.bx-cloud.com', 'api.bx-cloud.com'];
+        $hosts = ['main.bx-cloud.com', 'track.bx-cloud.com'];
         $bxHosts = (isset($argv[4]) ? ($argv[4] == 'all' ? $hosts : array($argv[4])) : $hosts);
         $timeout = isset($argv[5]) ? $argv[5] : 2000;
         foreach ($bxHosts as $bxHost) {
             $account = $this->account;
             $password = $this->password;
+            $apiKey = $this->apiKey;
+            $apiSecret = $this->apiSecret;
             $host = $bxHost;
             $print = false;
             $exception = null;

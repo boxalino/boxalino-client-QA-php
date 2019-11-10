@@ -12,16 +12,20 @@ use com\boxalino\bxclient\v1\BxParametrizedRequest;
 //BxClient::LOAD_CLASSES($libPath);
 
 //required parameters you should set for this example to work
-//$account = "boxalino_automated_tests2"; // your account name
-//$password = "boxalino_automated_tests2"; // your account password
+//$account = ""; // your account name
+//$password = ""; // your account password
+//$apiKey = ""; // your api key for the isDev flag
+//$apiSecret = ""; // your api secret for isDev flag
 $domain = ""; // your web-site domain (e.g.: www.abc.com)
 $logs = array(); //optional, just used here in example to collect logs
 $isDev = false;
-$host = isset($host) ? $host : "cdn.bx-cloud.com";
+$host = isset($host) ? $host : "main.bx-cloud.com";
 
 //Create the Boxalino Client SDK instance
 //N.B.: you should not create several instances of BxClient on the same page, make sure to save it in a static variable and to re-use it.
 $bxClient = new BxClient($account, $password, $domain, $isDev, $host);
+$bxClient->setApiKey($apiKey);
+$bxClient->setApiKey($apiSecret);
 $bxClient->setRequestMap($_REQUEST);
 if(isset($timeout)) {
     $bxClient->setCurlTimeout($timeout);
